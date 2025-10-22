@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <%- include("partials/_head") %>
+    </head>
+    <body>
+        <%- include("partials/_header") %>
+
+        <main class="container my-5 text-center text-white">
+            <div class="p-5 panel-radial">
+                <h1 class="display-4 fw-bold mb-3">500</h1>
+                <p class="lead mb-4">Ocorreu um erro interno no servidor.</p>
+                <p class="mb-4">
+                    <em
+                        ><%= (typeof erro !== 'undefined' && erro) ? erro :
+                        "Algo correu mal, mas já estamos a tratar disso." %></em
+                    >
+                </p>
+                <a href="/" class="btn btn-outline-light"
+                    >Voltar à Página Inicial</a
+                >
+            </div>
+        </main>
+
+        <%- include("partials/_footer") %>
+    </body>
+</html>

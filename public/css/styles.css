@@ -1,0 +1,69 @@
+/* ====== HeroDex base ====== */
+:root {
+    /* se quiseres ajustar opacidades globalmente, muda aqui */
+    --overlay-hero-40: rgba(0, 123, 255, 0.4);
+    /* azul Bootstrap antigo */
+    --overlay-hero-50: rgba(0, 123, 255, 0.5);
+    --overlay-vilao-40: rgba(220, 53, 69, 0.4);
+    /* vermelho Bootstrap */
+    --overlay-vilao-50: rgba(220, 53, 69, 0.5);
+}
+
+.bar-w {
+    width: var(--w);
+}
+
+/* Fundo radial escuro usado no navbar, painéis e footer */
+.bg-radial-dark {
+    background-image: radial-gradient(circle, #343a40 0%, #1d1f21 100%);
+}
+
+/* Painéis de erro / destaques com o mesmo radial e arredondado */
+.panel-radial {
+    background: radial-gradient(circle, #343a40 0%, #1d1f21 100%);
+    border-radius: 1rem;
+    /* ~ rounded-4 */
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+}
+
+/* Secção principal clara usada na home */
+.bg-page-soft {
+    background-color: #f8f9fa;
+}
+
+/* Overlays de cards (cores dependem do tipo) */
+.overlay-hero-40 {
+    background-color: var(--overlay-hero-40);
+}
+
+.overlay-hero-50 {
+    background-color: var(--overlay-hero-50);
+}
+
+.overlay-vilao-40 {
+    background-color: var(--overlay-vilao-40);
+}
+
+.overlay-vilao-50 {
+    background-color: var(--overlay-vilao-50);
+}
+
+/* aplica o background a partir de uma custom property */
+.overlay-bg {
+    background-color: var(--bg);
+}
+
+/* Imagens grandes nos detalhes */
+.img-max-400 {
+    max-height: 400px;
+}
+
+/* Barras de progresso mais altas (20px) */
+.progress-20 {
+    height: 20px;
+}
+
+/* Pequenas utilitárias (por se precisares) */
+.card-shadow {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}

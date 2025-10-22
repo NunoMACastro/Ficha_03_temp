@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <%- include("partials/_head") %>
+    </head>
+    <body>
+        <%- include("partials/_header") %>
+
+        <div class="container my-5">
+            <h2 class="text-center mb-4"><%= titulo %></h2>
+            <div class="row justify-content-center">
+                <% personagens.forEach(p => { %>
+                <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <a
+                        href="/detalhes/<%= p.id %>"
+                        class="text-decoration-none"
+                    >
+                        <div class="card text-white">
+                            <div class="position-relative">
+                                <img
+                                    src="<%= p.imagem %>"
+                                    class="card-img"
+                                    alt="<%= p.nome %>"
+                                    loading="lazy"
+                                />
+                                <div
+                                    class="card-img-overlay d-flex align-items-end p-2 overlay-bg"
+                                    style="--bg:<%= p.tipo === 'Herói' ? 'rgba(0,123,255,0.5)' : 'rgba(220,53,69,0.5)' %>;"
+                                >
+                                    <h5 class="card-title mb-0 text-white">
+                                        <%= p.nome %>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+
+        <%- include("partials/_footer") %>
+    </body>
+</html>

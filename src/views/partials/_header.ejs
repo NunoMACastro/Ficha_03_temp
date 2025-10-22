@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-radial-dark">
+    <div class="container">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+            <div class="navbar-nav">
+                <a class="nav-link active text-white" href="/">Home</a>
+                <a class="nav-link text-white" href="/liga/herois"
+                    >Liga dos Heróis</a
+                >
+                <a class="nav-link text-white" href="/liga/viloes"
+                    >Liga dos Vilões</a
+                >
+            </div>
+            <div class="text-white fw-bold"><%= header.titulo %></div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="row align-items-center text-center">
+        <h4 class="mb-3">Batalha do Dia</h4>
+        <% if (header && header.batalha && header.batalha.heroi &&
+        header.batalha.vilao) { %>
+        <div class="col-md-3">
+            <img
+                src="<%= header.batalha.heroi.imagem %>"
+                class="img-fluid rounded"
+                alt="<%= header.batalha.heroi.nome %>"
+            />
+        </div>
+        <div class="col-md-3">
+            <h5><%= header.batalha.heroi.nome %></h5>
+            <p><%= header.batalha.heroi.descricao %></p>
+            <div class="progress progress-20">
+                <div
+                    class="progress-bar bg-primary bar-w"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="<%= (Number(header.batalha.heroi.rating) * 20).toFixed(0) %>"
+                    style="
+                        --w: <%= (Number(header.batalha.heroi.rating) * 20)
+                            .toFixed(0) %>%;
+                    "
+                >
+                    <%= Number(header.batalha.heroi.rating).toFixed(1) %>/5
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <h5><%= header.batalha.vilao.nome %></h5>
+            <p><%= header.batalha.vilao.descricao %></p>
+            <div class="progress progress-20">
+                <div
+                    class="progress-bar bg-danger bar-w"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="<%= (Number(header.batalha.vilao.rating) * 20).toFixed(0) %>"
+                    style="
+                        --w: <%= (Number(header.batalha.vilao.rating) * 20)
+                            .toFixed(0) %>%;
+                    "
+                >
+                    <%= Number(header.batalha.vilao.rating).toFixed(1) %>/5
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <img
+                src="<%= header.batalha.vilao.imagem %>"
+                class="img-fluid rounded"
+                alt="<%= header.batalha.vilao.nome %>"
+            />
+        </div>
+    </div>
+    <div class="text-center mt-3">
+        <strong><%= header.batalha.resultado %></strong>
+    </div>
+    <% } else { %>
+    <div class="alert alert-warning">
+        Sem dados suficientes para a batalha de hoje.
+    </div>
+    <% } %>
+</div>
+
+<hr class="my-4" />

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <%- include("partials/_head") %>
+    </head>
+    <body>
+        <%- include("partials/_header") %>
+
+        <main class="container my-5 text-center text-white">
+            <div class="p-5 rounded-4 shadow-lg">
+                <h1 class="display-4 fw-bold mb-3">404</h1>
+                <p class="lead mb-4">
+                    A página que procuras não foi encontrada.
+                </p>
+                <p>
+                    O recurso
+                    <code class="text-warning bg-dark px-2 py-1 rounded"
+                        ><%= url %></code
+                    >
+                    não existe.
+                </p>
+                <a href="/" class="btn btn-outline-light mt-3">
+                    Voltar à Página Inicial
+                </a>
+            </div>
+        </main>
+
+        <%- include("partials/_footer") %>
+    </body>
+</html>
