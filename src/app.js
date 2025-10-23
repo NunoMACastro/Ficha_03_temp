@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 // Rotas (garante que os ficheiros de rotas também passam a ESM e usam extensão .js)
 import homeRoutes from "./routes/homeRoutes.js";
 //import detalhesRoutes from "./routes/detalhesRoutes.js";
-//import ligaRoutes from "./routes/ligaRoutes.js";
+import ligaRoutes from "./routes/ligaRoutes.js";
 
 // Importa middlewaresw
 import { layoutLocals } from "./middlewares/layoutLocals.js";
@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 --------------------------------------------------------------------------- */
 app.use("/", homeRoutes);
 //app.use("/detalhes", detalhesRoutes);
-//app.use("/liga", ligaRoutes);
+app.use("/liga", ligaRoutes);
 
 // 404 e erro...
 app.use((req, res) =>
